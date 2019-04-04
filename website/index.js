@@ -85,14 +85,15 @@ new Docute({
       }
     }
   ],
-  versions: {
-    'v4 (Latest)': {
-      link: '/'
-    },
-    v3: {
-      link: 'https://v3.docute.org'
-    }
-  },
+  // 주제별로 쓸 것이고 한 주제에 대한 버전은 필요 없어서 주석처리
+  // versions: {
+  //   'v4 (Latest)': {
+  //     link: '/'
+  //   },
+  //   'v3': {
+  //     link: '/'
+  //   }
+  // },
   nav: [
     {
       title: 'Home',
@@ -177,13 +178,13 @@ new Docute({
     '/': {
       language: 'English'
     },
-    '/zh/': {
-      language: 'Chinese',
-      editLinkText: '在 GitHub 上编辑此页',
+    '/kr/': {
+      language: 'Docute 한국어 문서',
+      editLinkText: 'GitHub 에서 수정하기',
       nav: [
         {
-          title: '首页',
-          link: '/zh/'
+          title: '홈',
+          link: '/kr/'
         },
         {
           title: 'GitHub',
@@ -192,70 +193,70 @@ new Docute({
       ],
       sidebar: [
         {
-          title: '指南',
+          title: '가이드',
           links: [
             {
-              title: '自定义',
-              link: '/zh/guide/customization'
+              title: '커스텀화',
+              link: '/kr/guide/customization'
             },
             {
-              title: 'Markdown 功能',
-              link: '/zh/guide/markdown-features'
+              title: 'Markdown 기능',
+              link: '/kr/guide/markdown-features'
             },
             {
-              title: '在 Markdown 中使用 Vue',
-              link: '/zh/guide/use-vue-in-markdown'
+              title: 'Markdown 안에서 Vue 사용',
+              link: '/kr/guide/use-vue-in-markdown'
             },
             {
-              title: '国际化',
-              link: '/zh/guide/internationalization'
+              title: '다국어화',
+              link: '/kr/guide/internationalization'
             },
             {
-              title: '插件',
-              link: '/zh/guide/plugin'
+              title: '플러그인',
+              link: '/kr/guide/plugin'
             },
             {
-              title: '部署',
-              link: '/zh/guide/deployment'
+              title: '배포',
+              link: '/kr/guide/deployment'
             }
           ]
         },
         {
-          title: '进阶',
+          title: '진보',
           links: [
             {
-              title: '使用打包工具',
-              link: '/zh/guide/use-with-bundlers'
+              title: '번들러와 함께 사용',
+              link: '/kr/guide/use-with-bundlers'
             },
             {
-              title: '离线支持',
-              link: '/zh/guide/offline-support'
+              title: '오프라인 지원',
+              link: '/kr/guide/offline-support'
             }
           ]
         },
         {
-          title: '参考',
+          title: '참조',
           links: [
             {
-              title: '配置项',
-              link: '/zh/options'
+              title: '옵션',
+              link: '/kr/options'
             },
             {
-              title: '内置组件',
-              link: '/zh/builtin-components'
+              title: '내장 컴포넌트',
+              link: '/kr/builtin-components'
             },
             {
-              title: '插件 API',
-              link: '/zh/plugin-api'
+              title: '플러그인 API',
+              link: '/kr/plugin-api'
             }
           ]
         },
         {
-          title: '其它',
+          title: '기타',
           links: [
             {
-              title: '致谢',
-              link: '/zh/credits'
+              title: '크레딧',
+              link: '/kr/credits'
             }
           ]
         }
