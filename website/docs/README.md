@@ -1,8 +1,8 @@
-# Introduction to Docute
+# Introduction to 도큣
 
 The fastest way to create a documentation site for your project.
 
-## What is 도도
+## What is Docute
 
 Docute is basically a JavaScript file that fetches Markdown files and renders them as a single-page application.
 
