@@ -1,36 +1,36 @@
-# Options
+# 옵션
 
-The options used by `Docute` constructor.
+`Docute` 생성자가 사용하는 옵션.
 
 ```js
 new Docute(options)
 ```
 
-## target
+## 대상
 
-- Type: `string`
-- Default: `docute`
+- 타입 :`string`
+- 기본값 :`docute`
 
-The ID of the target element to locate, e.g. `app` or `#app`.
+찾을 대상 요소의 ID입니다. (예. `app` 또는`#app`)
 
-## title
+## 제목
 
-- Type: `string`
-- Default: `document.title`
+- 타입 :`string`
+- 기본값 :`document.title`
 
-Website title.
+웹 사이트 제목.
 
 ## nav
 
-- Type: `Array<NavItem>`
+- 타입 :`Array <NavItem>`
 
-An array of navigation items to display at navbar.
+navbar에 표시 할 탐색 항목의 배열입니다.
 
 ```ts
 interface NavItem {
   title: string
   link?: string
-  // Use `links` instead of `link` to display dropdown
+  //`link` 대신`links`를 사용하여 드롭 다운을 표시합니다.
   links?: Array<NavItemLink>
 }
 
@@ -40,11 +40,11 @@ interface NavItemLink {
 }
 ```
 
-## sidebar
+## 사이드바
 
-- Type: `Array<SidebarItem>` `(store: Vuex.Store) => Array<SidebarItem>`
+- 타입 :`Array <SidebarItem>``(store: Vuex.Store) => Arrat<SidebarItem>`
 
-An array of navigation items to display at sidebar.
+사이드 바에 표시 할 탐색 항목의 배열입니다.
 
 ```ts
 interface SidebarItem {
@@ -60,20 +60,20 @@ interface SidebarItemLink {
 }
 ```
 
-## sourcePath
+## 소스 경로
 
-- Type: `string`
-- Default: `'./'`
+- 타입 :`string`
+- 기본값 :`./ '`
 
-The source path to fetch markdown files from, by default we load them from path where your `index.html` is populated.
+markdown 파일을 가져 오는 원본 경로는 기본적으로`index.html`이 채워진(populated) 경로에서 로드합니다.
 
-It can also be a full URL like: `https://some-website/path/to/markdown/files` so that you can load files from a different domain.
+`https://some-website/path/to/markdown/files`과 같은 완전한 URL이 될 수도 있습니다. 그러면 다른 도메인에서 파일을 로드 할 수 있습니다.
 
-## routes
+## 라우트(경로)
 
-- Type: `Routes`
+- 타입: `Routes`
 
-Use this option to make Docute fetch specific file or use given content for a path.
+Docute가 특정 파일을 가져 오거나 특정 내용을 경로로 사용하게 하려면 이 옵션을 사용하십시오.
 
 ```ts
 interface Routes {
@@ -81,40 +81,39 @@ interface Routes {
 }
 
 interface RouteData {
-  /* Default to the content h1 header */
+  / * 내용 h1 헤더의 기본값 * /
   title?: string
-  /* One of `content` and `file` is required */
+  / *`content`와`file` 중 하나가 필요합니다 * /
   content?: string
-  /* Response will be used as `content` */
+  / * 응답은`content`로 사용될 것입니다 * /
   file?: string
-  /* Parse the content as markdown, true by default */
+  / * 내용을 마크 다운으로 구문 분석합니다. 기본적으로 true입니다. * /
   markdown?: boolean
   [k: string]?: any
 }
 ```
 
-## componentMixins
+## 컴포넌트 믹스인
 
-- Type: `Array<Object>`
+- 타입 :`Array <Object>`
 
-Basically an array of [Vue mixins](https://vuejs.org/v2/api/#mixins) that are applied to all markdown components.
+기본적으로 모든 마크 다운 구성 요소에 적용되는 [Vue mixins](https://vuejs.org/v2/api/#mixins)의 배열입니다.
 
+## 코드구문강조
 
-## highlight
+- 타입 :`Array <string>`
 
-- Type: `Array<string>`
+강조 표시 할 언어 이름의 배열입니다. 지원되는 모든 언어 이름 ([prism-`접두어 제외)은 [Prism.js] (https://unpkg.com/prismjs/components/)에서 확인하십시오.
 
-An array of language names to highlight. Check out [Prism.js](https://unpkg.com/prismjs/components/) for all supported language names (without the `prism-` prefix).
-
-For example: `highlight: ['typescript', 'go', 'graphql']`.
+예 :`highlight : [ 'typescript', 'go', 'graphql']`.
 
 ## editLinkBase
 
-- Type: `string`
+- 타입 :`string`
 
-The base path for the URL of *edit link*.
+*edit link*의 URL에 대한 기본 경로입니다.
 
-e.g. If you store the markdown files in `docs` folder on master branch in a GitHub repo, then it should be:
+예 : Markdown 파일을 GitHub 저장소의 master 브랜치에있는`docs` 폴더에 저장하면 다음과 같아야합니다 :
 
 ```
 https://github.com/USER/REPO/blob/master/docs
@@ -122,60 +121,60 @@ https://github.com/USER/REPO/blob/master/docs
 
 ## editLinkText
 
-- Type: `string`
-- Default: `'Edit this page'`
+- 타입 :`string`
+- 기본값 : `'Edit this page'`
 
-The text for *edit link*.
+*edit link* 텍스트.
 
-## theme
+## 테마
 
-- Type: `string`
-- Default: `default`
-- Values: `default` `dark`
+- 타입 :`string`
+- 기본값 :`default`
+- 값 :`default` `dark`
 
-Site theme.
+사이트 테마.
 
-## darkThemeToggler
+## 다크테마 토글러
 
-- Type: `boolean`
-- Default: `undefined`
+- 타입 :`boolean`
+- 기본값 :`undefined`
 
 
-Show a toggler for switching dark theme on and off.
+어두운 테마를 켜고 끌 수있는 토글러를 표시합니다.
 
-## layout
+## 레이아웃
 
-- Type: `string`
-- Default: `wide`
-- Values: `wide` `narrow` `left`
+- 타입 :`string`
+- 기본값 :`wide`
+- 값 :`wide` `narrow` `left`
 
-Site layout.
+사이트 레이아웃.
 
-## versions
+## 버전
 
-- Type: `Versions`
+- 타입 :`버전`
 
-When specified, Docute will show a version selector at the sidebar.
+Docute를 지정하면 사이드 바에 버전 선택기가 표시됩니다.
 
 ```ts
 interface Versions {
-  // The version number, like `v1`
+  // 'v1`과 같은 버전 번호.
   [version: string]: {
-    // The link to this version of docs
+   //이 버전의 문서에 대한 링크
     link: string
   }
 }
 ```
 
-## cssVariables
+## css 변수
 
-- Type: `object` `(theme: string) => object`
+- 타입 : `object` `(theme: string) => object`
 
-Override CSS variables.
+CSS 변수를 재정의하십시오.
 
-## overrides
+## 재정의(오버라이드)
 
-- Type: `{[path: string]: LocaleOptions}`
+- 타입 : `{[path: string]: LocaleOptions}`
 
 ```ts
 interface LocaleOptions extends Options {
@@ -183,22 +182,21 @@ interface LocaleOptions extends Options {
 }
 ```
 
-## router
+## 라우터
 
-- Type: `ConstructionOptions`
+- 타입: `ConstructionOptions`
 
-All vue-router's [Construction options](https://router.vuejs.org/api/#router-construction-options) except for `routes` are accepted here.
+`route`를 제외한 모든 라우트 라우터의 [구성 옵션](https://router.vuejs.org/api/#router-construction-options)은 여기에서 허용됩니다.
 
-For example, you can set `router: { mode: 'history' }` to [get rid of the hash](https://router.vuejs.org/guide/essentials/history-mode.html#example-server-configurations) in URLs.
-
+예를 들어, URL 에서 [해시 제거](https://router.vuejs.org/guide/essentials/history-mode.html#example-server-configurations) 위해 `router: {mode: 'history '}`로 설정할 수 있습니다 .
 
 ## banner / footer
 
-- Type: `string` `VueComponent`
+- 타입: `string` `VueComponent`
 
-Display banner and footer. A string will be wrapped inside `<div class="docute-banner">` or `<div class="docute-footer">` and used as Vue template.
+배너와 꼬리말을 표시합니다. 문자열은`<div class = "docute-banner">` 또는`<div class = "docute-footer">`안에 감싸여 Vue 템플릿으로 사용됩니다.
 
-For example:
+예 :
 
 ```js
 new Docute({
@@ -207,7 +205,7 @@ new Docute({
 })
 ```
 
-You can also use a Vue component:
+Vue 컴포넌트를 사용할 수도 있습니다:
 
 ```js
 new Docute({
@@ -224,6 +222,6 @@ new Docute({
 
 ## fetchOptions
 
-- Type: `object`
+- 타입: `object`
 
-The option for [`window.fetch`](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch).
+ [`window.fetch`](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch) 옵션.

@@ -1,10 +1,10 @@
-# Built-in Components
+# 내장 된 구성 요소
 
-Docute comes with a set of built-in Vue components.
+Docute에는 Vue 구성 요소가 내장되어 있습니다.
 
 ## `<ImageZoom>`
 
-Use medium-style zoom effect to display certain image.
+특정 이미지를 표시하려면 중간 스타일 확대 / 축소 효과를 사용하십시오.
 
 | Prop   | Type      | Default | Description              |
 | ------ | --------- | ------- | ------------------------ |
@@ -15,7 +15,7 @@ Use medium-style zoom effect to display certain image.
 
 <br>
 
-Example:
+예시:
 
 ```markdown
 <ImageZoom 
@@ -29,7 +29,7 @@ Example:
 
 ## `<Badge>`
 
-A small count and labeling component.
+작은 강조와 라벨링 구성 요소.
 
 | Prop     | Type                                                                 | Default | Description             |
 | -------- | -------------------------------------------------------------------- | ------- | ----------------------- |
@@ -39,7 +39,7 @@ A small count and labeling component.
 
 <br>
 
-Example:
+예시:
 
 ```markdown
 - Feature 1 <Badge>Badge</Badge>
@@ -59,7 +59,7 @@ Example:
 
 ## `<Note>`
 
-Colored note blocks, to emphasize part of your page.
+색이 칠해진 노트 블록, 귀하의 페이지의 일부를 강조합니다.
 
 | Prop     | Type                                                                 | Default             | Description                                       |
 | -------- | -------------------------------------------------------------------- | ------------------- | ------------------------------------------------- |
@@ -69,7 +69,7 @@ Colored note blocks, to emphasize part of your page.
 
 <br>
 
-Examples:
+예시:
 
 ```markdown
 <Note>
@@ -131,13 +131,13 @@ This is a danger for something to take action for.
 
 ## `<Gist>`
 
-Embed [GitHub Gist](https://gist.github.com/) into your Markdown documents.
+Markdown 문서에 [GitHub Gist](https://gist.github.com/)를 삽입하십시오.
 
 | Prop | Type     | Default | Description |
 | ---- | -------- | ------- | ----------- |
 | id   | `string` | N/A     | Gist ID     |
 
-Example:
+예시:
 
 ```markdown
 <Gist id="71b8002ecd62a68fa7d7ee52011b2c7c" />
@@ -147,7 +147,7 @@ Example:
 
 ## `<docute-select>`
 
-A customized `<select>` component:
+커스터마이즈 된`<select>`컴포넌트 :
 
 <!-- prettier-ignore -->
 ````vue
@@ -198,8 +198,8 @@ Your favorite fruit: {{ favoriteFruit }}
 }
 ```
 
-## `<v-style>` `<v-script>`
+##`<v-style>``<v-script>`
 
-A hack for using `<style>` and `<script>` tags Vue template.
+`<style>`과`<script>`태그를 사용하기위한 해킹.
 
-In general you don't need to use them directly, since we automatically convert `<style>` and `<script>` tags in Markdown to these components.
+일반적으로 Markdown에서 <style>과 <script> 태그를 이들 구성 요소로 자동 변환하기 때문에 직접 사용할 필요가 없습니다.

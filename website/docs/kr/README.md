@@ -61,7 +61,7 @@ Docute는 기본적으로 Markdown 파일을 가져 와서 단일 페이지 응�
 - Golang : `caddy`
 - .. 또는 무엇이든 정적 웹 서버
 
-다음으로 [sidebar](./options.md#sidebar), [nav](./options.md # nav) 또는 다른 [options](./options.md)을 사용하여 웹 사이트를 사용자 정의 할 수 있습니다.
+다음으로 [sidebar](./options#사이드바), [nav](./options.md#nav) 또는 다른 [options](./options.md)을 사용하여 웹 사이트를 사용자 정의 할 수 있습니다.
 
 Docute 온라인 또는 [다운로드](https://repl.it/@egoist/docute-starter.zip) 할 수있는 [REPL](https://repl.it/@egoist/docute-starter)이 있습니다. 로컬로 실행합니다.
 
