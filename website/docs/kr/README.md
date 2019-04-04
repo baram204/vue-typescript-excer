@@ -1,18 +1,18 @@
-# Introduction to Docute
+# Docute 소개
 
-The fastest way to create a documentation site for your project.
+프로젝트를위한 문서 사이트를 만드는 가장 빠른 방법.
 
-## What is 도도
+## Docute 는 무엇입니까?
 
-Docute is basically a JavaScript file that fetches Markdown files and renders them as a single-page application.
+Docute는 기본적으로 Markdown 파일을 가져 와서 단일 페이지 응용 프로그램으로 렌더링하는 JavaScript 파일입니다.
 
-It's totally runtime-driven so there's no server-side components involved which also means there's no build process. You only need to create an HTML file and a bunch of Markdown documents and your website is almost ready!
+그것은 완전히 런타임으로 구동되므로 서버 측 구성 요소가 필요하지 않으므로 빌드 프로세스가 필요 없습니다. HTML 파일과 Markdown 문서를 만들면 웹 사이트가 거의 준비되었습니다!
 
-## How does it work
+## 어떻게 작동합니까?
 
-In short: URL is the API.
+간단히 말해서 : URL은 API입니다.
 
-We fetch and render corresponding markdown file for the URL you visit:
+방문한 URL에 해당하는 markdown 파일을 가져 와서 렌더링합니다.
 
 ```
 /         => /README.md
@@ -21,9 +21,9 @@ We fetch and render corresponding markdown file for the URL you visit:
 /foo/bar  => /foo/bar.md
 ```
 
-## Quick Start
+## 빠른 시작
 
-Let's say you have following files in `./my-docs` folder:
+`. / my-docs` 폴더에 다음 파일들이 있다고 가정 해 봅시다 :
 
 ```bash
 .
@@ -31,7 +31,7 @@ Let's say you have following files in `./my-docs` folder:
 └── index.html
 ```
 
-The `index.html` looks like:
+`index.html`는 다음과 같습니다 :
 
 ```html {highlight:[7,'10-16']}
 <!DOCTYPE>
@@ -54,31 +54,31 @@ The `index.html` looks like:
 </html>
 ```
 
-Then you can serve this folder as a static website on your machine using:
+그런 다음이 폴더를 다음을 사용하여 컴퓨터의 정적 웹 사이트로 제공 할 수 있습니다.
 
-- Node.js: `npm i -g serve && serve .`
-- Python: `python -m SimpleHTTPServer`
-- Golang: `caddy`
-- ..or whatever static web server
+- Node.js :`npm i -g serve && serve .`
+- Python :`python -m SimpleHTTPServer`
+- Golang : `caddy`
+- .. 또는 무엇이든 정적 웹 서버
 
-Next, you may want to use [sidebar](./options.md#sidebar), [nav](./options.md#nav) or other [options](./options.md) to customize the website. 
+다음으로 [sidebar](./options.md#sidebar), [nav](./options.md # nav) 또는 다른 [options](./options.md)을 사용하여 웹 사이트를 사용자 정의 할 수 있습니다.
 
-Here's a [REPL](https://repl.it/@egoist/docute-starter) where you can try Docute online or [download](https://repl.it/@egoist/docute-starter.zip) it to run locally.
+Docute 온라인 또는 [다운로드](https://repl.it/@egoist/docute-starter.zip) 할 수있는 [REPL](https://repl.it/@egoist/docute-starter)이 있습니다. 로컬로 실행합니다.
 
-## Comparisons
+## 비교
 
 ### VuePress / GitBook / Hexo
 
-They all generate static HTML at build time, which is good for SEO. 
+그들은 모두 정적 인 HTML을 생성하는데, 이는 SEO에 도움이됩니다.
 
-If you care about SEO, you may like using [presite](https://github.com/egoist/presite) to prerender your website.
+SEO에 관심이 있다면 [presite](https://github.com/egoist/presite)를 사용하여 웹 사이트를 미리 렌더링하는 것이 좋습니다.
 
-### Docsify
+### 문서화
 
-[Docsify](https://docsify.js.org/#/) and Docute are pretty much the same, but with different UI and different usages.
+[Docsify](https://docsify.js.org/#/)와 Docute는 거의 같지만 UI와 사용법이 다릅니다.
 
-Docute (60kB) is 3 times bigger than Docisfy (20kB), because we use Vue, Vue Router and Vuex while Docsify uses vanilla JavaScript under the hood.
+Docute는 Vue, Vue Router 및 Vuex를 사용하기 때문에 Docute(60kB)는 Docisfy(20kB)보다 3 배 더 큰 반면 Docsify는 바닐라 JavaScript를 사용합니다.
 
-## Browser Compatibility
+## 브라우저 호환성
 
-Docute supports all ever-green browsers, i.e. No IE support!
+Docute는 모든 에버그린 브라우저를 지원합니다. IE 지원이 없습니다!
