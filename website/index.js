@@ -4,37 +4,6 @@ import Docute from '../src'
 import prismLanguages from '../src/utils/prismLanguages'
 import ColorBox from './components/ColorBox.vue'
 
-const PatreonIcon = {
-  template: html`
-    <svg
-      width="569px"
-      height="546px"
-      viewBox="0 0 569 546"
-      version="1.1"
-      xmlns="http://www.w3.org/2000/svg"
-    >
-      <title>Patreon logo</title>
-      <g>
-        <circle
-          fill="rgb(249, 104, 84)"
-          id="Oval"
-          cx="362.589996"
-          cy="204.589996"
-          r="204.589996"
-        ></circle>
-        <rect
-          fill="rgb(5, 45, 73)"
-          id="Rectangle"
-          x="0"
-          y="0"
-          width="100"
-          height="545.799988"
-        ></rect>
-      </g>
-    </svg>
-  `
-}
-
 new Docute({
   target: 'app',
   title: 'Docute',
@@ -85,22 +54,32 @@ new Docute({
       }
     }
   ],
-  // 주제별로 쓸 것이고 한 주제에 대한 버전은 필요 없어서 주석처리
-  versions: {
-    '홈': {
-      link: '/'
-    },
-    '자바스크립트': {
-      link: '/js/'
-    },
-    'Docute 한국어 문서': {
-      link: '/kr/'
-    },
-  },
+  // 버전
+  // versions: {
+  //   '홈': {
+  //     link: '/'
+  //   },
+  //   '자바스크립트': {
+  //     link: '/js/'
+  //   },
+  //   'Docute 한국어 문서': {
+  //     link: '/kr/'
+  //   },
+  // },
+
+  // 메인 네비와 사이드바 라우트
   nav: [
     {
       title: 'Home',
       link: '/'
+    },
+    {
+      title: 'Javascript',
+      link: '/js/'
+    },
+    {
+      title: 'Docute문서',
+      link: '/kr/'
     },
     {
       title: 'GitHub',
@@ -108,31 +87,42 @@ new Docute({
     }
   ],
   sidebar: [
-    {
-      title: '자바스크립트',
-      links: [
-        {
-          title: '콘솔 사용하기',
-          link: '/js/console'
-        },
-      ]
-    },
+    // {
+    //   title: '자바스크립트',
+    //   links: [
+    //     {
+    //       title: '콘솔 사용하기',
+    //       link: '/js/console'
+    //     },
+    //   ]
+    // },
   ],
+
+  // 오버라이드 할 라우트들
   overrides: {
     '/': {
       language: '정리첩'
     },
+    // Docute 한국어 문서 네비와 사이드바 라우트
     '/kr/': {
       language: 'Docute 한국어 문서',
       editLinkText: 'GitHub 에서 수정하기',
       nav: [
         {
-          title: '홈',
+          title: 'Home',
+          link: '/'
+        },
+        {
+          title: 'Javascript',
+          link: '/js/'
+        },
+        {
+          title: 'Docute문서',
           link: '/kr/'
         },
         {
           title: 'GitHub',
-          link: 'https://github.com/egoist/docute'
+          link: 'https://github.com/baram204/vue-typescript-excer'
         }
       ],
       sidebar: [
@@ -205,25 +195,59 @@ new Docute({
           ]
         }
       ]
+    },
+    // 자바스크립트 관련 네비와 사이드바 라우트
+    '/js/': {
+      language: 'Javascript',
+      editLinkText: 'GitHub 에서 수정하기',
+      nav: [
+        {
+          title: 'Home',
+          link: '/'
+        },
+        {
+          title: 'Javascript',
+          link: '/js/'
+        },
+        {
+          title: 'Docute문서',
+          link: '/kr/'
+        },
+        {
+          title: 'GitHub',
+          link: 'https://github.com/baram204/vue-typescript-excer'
+        }
+      ],
+      sidebar: [
+        {
+          title: '유용한',
+          links: [
+            {
+              title: '콘솔사용',
+              link: '/js/console'
+            },
+          ]
+        }
+      ]
     }
   },
   footer: ``,
   // `&copy; ${new Date().getFullYear()} Made by <a href="https://egoist.sh">EGOIST</a> While Watching Anime.`,
   banner: ``
 // {
-    // template: html`
-    //   <div class="docute-banner">
-    //     <note :label="false"
-    //       ><PatreonIcon width="16" height="16" style="position:relative;top:2px;margin-right:8px;" />Support Docute development by
-    //       <a href="https://patreon.com/egoist" target="_blank"
-    //         >becoming a patron or one-time donation <ExternalLinkIcon /></a
-    //       >.</note
-    //     >
-    //   </div>
-    // `,
-    // components: {
-    //   PatreonIcon
-    // }
+  // template: html`
+  //   <div class="docute-banner">
+  //     <note :label="false"
+  //       ><PatreonIcon width="16" height="16" style="position:relative;top:2px;margin-right:8px;" />Support Docute development by
+  //       <a href="https://patreon.com/egoist" target="_blank"
+  //         >becoming a patron or one-time donation <ExternalLinkIcon /></a
+  //       >.</note
+  //     >
+  //   </div>
+  // `,
+  // components: {
+  //   PatreonIcon
+  // }
   // }
 })
 
@@ -259,4 +283,35 @@ Vue.component('ReverseText', {
 
 if (process.env.NODE_ENV === 'production' && 'serviceWorker' in navigator) {
   navigator.serviceWorker.register('/sw.js')
+}
+
+const PatreonIcon = {
+  template: html`
+    <svg
+      width="569px"
+      height="546px"
+      viewBox="0 0 569 546"
+      version="1.1"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <title>Patreon logo</title>
+      <g>
+        <circle
+          fill="rgb(249, 104, 84)"
+          id="Oval"
+          cx="362.589996"
+          cy="204.589996"
+          r="204.589996"
+        ></circle>
+        <rect
+          fill="rgb(5, 45, 73)"
+          id="Rectangle"
+          x="0"
+          y="0"
+          width="100"
+          height="545.799988"
+        ></rect>
+      </g>
+    </svg>
+  `
 }
