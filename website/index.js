@@ -3,6 +3,7 @@ import googleAnalytics from 'docute-google-analytics'
 import Docute from '../src'
 import prismLanguages from '../src/utils/prismLanguages'
 import ColorBox from './components/ColorBox.vue'
+import docuteMermaid from 'docute-mermaid'
 
 new Docute({
   target: 'app',
@@ -10,7 +11,8 @@ new Docute({
   layout: 'wide',
   highlight: ['typescript', 'bash', 'json', 'markdown'],
   plugins: [
-    process.env.NODE_ENV === 'production' && googleAnalytics('UA-54857209-11')
+    // process.env.NODE_ENV === 'production' && googleAnalytics('UA-54857209-11'),
+    docuteMermaid()
   ].filter(Boolean),
   editLinkBase: 'https://github.com/egoist/docute/tree/master/website/docs',
   editLinkText: 'Edit this page on GitHub',

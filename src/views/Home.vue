@@ -66,6 +66,9 @@ export default {
     if (!window[INITIAL_STATE_NAME]) {
       this.fetchFile(this.decodedRoute.path).then(this.setInitialState)
     }
+
+    this.addScript(this.mermaid)
+    this.addScript(this.docuteMermaid)
   },
 
   beforeRouteUpdate(to, from, next) {
@@ -184,6 +187,25 @@ export default {
       } else {
         document.title = title
       }
+    },
+
+    addScript(src) {
+      window.addEventListener('load', () => {
+        const script = document.createElement('script')
+        script.src = src
+        script.async = true
+        script.defer = true
+        document.body.appendChild(script)
+      })
+    }
+  },
+
+  data() {
+    return {
+      mermaid:
+        'https://cdn.jsdelivr.net/npm/mermaid@8.0.0-rc.8/dist/mermaid.min.js',
+      docuteMermaid:
+        'https://cdn.jsdelivr.net/npm/docute-mermaid@1/dist/index.min.js'
     }
   }
 }
