@@ -92,7 +92,10 @@ new Docute({
     },
     '자바스크립트': {
       link: '/js/'
-    }
+    },
+    'Docute 한국어 문서': {
+      link: '/kr/'
+    },
   },
   nav: [
     {
@@ -204,24 +207,24 @@ new Docute({
       ]
     }
   },
-  footer: `
-  &copy; ${new Date().getFullYear()} Made by <a href="https://egoist.sh">EGOIST</a> While Watching Anime.
-  `,
-  banner: {
-    template: html`
-      <div class="docute-banner">
-        <note :label="false"
-          ><PatreonIcon width="16" height="16" style="position:relative;top:2px;margin-right:8px;" />Support Docute development by
-          <a href="https://patreon.com/egoist" target="_blank"
-            >becoming a patron or one-time donation <ExternalLinkIcon /></a
-          >.</note
-        >
-      </div>
-    `,
-    components: {
-      PatreonIcon
-    }
-  }
+  footer: ``,
+  // `&copy; ${new Date().getFullYear()} Made by <a href="https://egoist.sh">EGOIST</a> While Watching Anime.`,
+  banner: ``
+// {
+    // template: html`
+    //   <div class="docute-banner">
+    //     <note :label="false"
+    //       ><PatreonIcon width="16" height="16" style="position:relative;top:2px;margin-right:8px;" />Support Docute development by
+    //       <a href="https://patreon.com/egoist" target="_blank"
+    //         >becoming a patron or one-time donation <ExternalLinkIcon /></a
+    //       >.</note
+    //     >
+    //   </div>
+    // `,
+    // components: {
+    //   PatreonIcon
+    // }
+  // }
 })
 
 Vue.component('ReverseText', {
