@@ -86,14 +86,14 @@ new Docute({
     }
   ],
   // 주제별로 쓸 것이고 한 주제에 대한 버전은 필요 없어서 주석처리
-  // versions: {
-  //   'v4 (Latest)': {
-  //     link: '/'
-  //   },
-  //   'v3': {
-  //     link: '/'
-  //   }
-  // },
+  versions: {
+    '홈': {
+      link: '/'
+    },
+    '자바스크립트': {
+      link: '/js/'
+    }
+  },
   nav: [
     {
       title: 'Home',
@@ -101,82 +101,23 @@ new Docute({
     },
     {
       title: 'GitHub',
-      link: 'https://github.com/egoist/docute'
+      link: 'https://github.com/baram204/vue-typescript-excer'
     }
   ],
   sidebar: [
     {
-      title: 'Guide',
+      title: '자바스크립트',
       links: [
         {
-          title: 'Customization',
-          link: '/guide/customization'
+          title: '콘솔 사용하기',
+          link: '/js/console'
         },
-        {
-          title: 'Markdown Features',
-          link: '/guide/markdown-features'
-        },
-        {
-          title: 'Use Vue in Markdown',
-          link: '/guide/use-vue-in-markdown'
-        },
-        {
-          title: 'Internationalization',
-          link: '/guide/internationalization'
-        },
-        {
-          title: 'Plugin',
-          link: '/guide/plugin'
-        },
-        {
-          title: 'Deployment',
-          link: '/guide/deployment'
-        }
       ]
     },
-    {
-      title: 'Advanced',
-      links: [
-        {
-          title: 'Use With Bundlers',
-          link: '/guide/use-with-bundlers'
-        },
-        {
-          title: 'Offline Support',
-          link: '/guide/offline-support'
-        }
-      ]
-    },
-    {
-      title: 'References',
-      links: [
-        {
-          title: 'Options',
-          link: '/options'
-        },
-        {
-          title: 'Built-in Components',
-          link: '/builtin-components'
-        },
-        {
-          title: 'Plugin API',
-          link: '/plugin-api'
-        }
-      ]
-    },
-    {
-      title: 'Misc',
-      links: [
-        {
-          title: 'Credits',
-          link: '/credits'
-        }
-      ]
-    }
   ],
   overrides: {
     '/': {
-      language: 'English'
+      language: '정리첩'
     },
     '/kr/': {
       language: 'Docute 한국어 문서',

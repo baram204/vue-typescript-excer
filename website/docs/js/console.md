@@ -1,6 +1,8 @@
-# Use Vue in Markdown
+# 콘솔 사용
 
-Leverage the power of Vue and JavaScript in writing Markdown document!
+좀 더 편하게 디버깅 하기 위한 콘솔 기능 정리. [원문]
+
+[원문]: https://medium.com/appsflyer/10-tips-for-javascript-debugging-like-a-pro-with-console-7140027eb5f6 
 
 ## Interpolation
 

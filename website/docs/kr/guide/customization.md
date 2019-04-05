@@ -116,7 +116,7 @@ new Docute({
 
 ## 사용자 정의 글꼴
 
-웹 사이트에 맞춤 글꼴을 적용하는 것은 매우 쉽습니다. HTML 파일에 '<style>'태그를 추가하여 [Google Fonts](https://fonts.google.com/)를 사용할 수 있습니다.
+웹 사이트에 맞춤 글꼴을 적용하는 것은 매우 쉽습니다. HTML 파일에 `<style>` 태그를 추가하여 [Google Fonts](https://fonts.google.com/)를 사용할 수 있습니다.
 
 ```html
 <style>
@@ -153,7 +153,7 @@ new Docute({
 })
 ```
 
-<code>{{$ store.getters.config.theme}}</code> 테마에서 사용되는`cssVariables` :
+<code>{{ $store.getters.config.theme }}</code> 테마에서 사용되는`cssVariables` :
 
 <ul>
 <li v-for="(value, key) in $store.getters.cssVariables" :key="key">
