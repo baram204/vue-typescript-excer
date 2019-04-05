@@ -58,13 +58,13 @@ export default {
   },
 
   async serverPrefetch() {
-    await this.fetchFile(this.$route.path)
+    await this.fetchFile(this.decodedRoute.path)
     this.setTitle()
   },
 
   mounted() {
     if (!window[INITIAL_STATE_NAME]) {
-      this.fetchFile(this.$route.path).then(this.setInitialState)
+      this.fetchFile(this.decodedRoute.path).then(this.setInitialState)
     }
   },
 
@@ -120,6 +120,14 @@ export default {
       hooks.process('extendMarkdownComponent', component)
 
       return component
+    },
+
+    decodedRoute() {
+      return {
+        fullpath: decodeURI(this.$route.fullPath),
+        path: decodeURI(this.$route.path),
+        hash: decodeURI(this.$route.hash)
+      }
     }
   },
 
@@ -133,7 +141,8 @@ export default {
     },
 
     jumpToHash() {
-      const hash = decodeURI(this.$route.hash)
+      const {hash} = this.decodedRoute
+
       if (hash) {
         const el = document.querySelector(hash)
         if (el) {
@@ -160,7 +169,7 @@ export default {
     },
 
     setTitle() {
-      const {path} = this.$route
+      const {path} = this.decodedRoute
       const {config, homePaths} = this.$store.getters
 
       let title =
